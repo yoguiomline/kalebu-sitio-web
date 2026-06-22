@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <!-- Fondo redondeado crema -->
+  <rect width="40" height="40" rx="10" fill="#F5F2EE"/>
+  <!-- Figura Kalebu escalada a 40x40 (viewBox 200x230 → escala 40/200 = 0.2, 40/230 ≈ 0.174) -->
+  <g transform="translate(0,2) scale(0.195)">
+    <!-- Hojas -->
+    <ellipse cx="59"  cy="76"  rx="9.5" ry="21" fill="#8EC8C4" transform="rotate(-62 59 76)"/>
+    <ellipse cx="73"  cy="50"  rx="9.5" ry="21" fill="#B8AECC" transform="rotate(-40 73 50)"/>
+    <ellipse cx="89"  cy="34"  rx="9.5" ry="21" fill="#ACCAA6" transform="rotate(-16 89 34)"/>
+    <ellipse cx="111" cy="34"  rx="9.5" ry="21" fill="#8CC8CA" transform="rotate(16 111 34)"/>
+    <ellipse cx="127" cy="50"  rx="9.5" ry="21" fill="#EAB8AC" transform="rotate(40 127 50)"/>
+    <ellipse cx="141" cy="76"  rx="9.5" ry="21" fill="#EEDAA0" transform="rotate(62 141 76)"/>
+    <!-- Figura -->
+    <line x1="90"  y1="78" x2="68"  y2="56" stroke="#6E7C82" stroke-width="15" stroke-linecap="round"/>
+    <line x1="110" y1="78" x2="132" y2="56" stroke="#6E7C82" stroke-width="15" stroke-linecap="round"/>
+    <path d="M 87 72 C 83 104 79 130 76 156 L 124 156 C 121 130 117 104 113 72 Z" fill="#6E7C82"/>
+    <circle cx="100" cy="54" r="13" fill="#6E7C82"/>
+  </g>
+</svg>

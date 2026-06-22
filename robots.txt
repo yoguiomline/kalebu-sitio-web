@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kalebu.com.ar/sitemap.xml

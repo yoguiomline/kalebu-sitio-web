@@ -1,0 +1,35 @@
+[build]
+  publish = "."
+
+# Seguridad para todas las páginas
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Caché de assets estáticos (CSS, JS, SVG)
+[[headers]]
+  for = "/sitio-styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/sitio.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/favicon.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Redirect www → apex (configurar también en DNS)
+[[redirects]]
+  from = "https://www.kalebu.com.ar/*"
+  to   = "https://kalebu.com.ar/:splat"
+  status = 301
+  force  = true

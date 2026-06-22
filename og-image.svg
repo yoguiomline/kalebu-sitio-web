@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FAFAF7"/>
+
+  <!-- Decorative left panel -->
+  <rect x="0" y="0" width="420" height="630" fill="#2D5016"/>
+
+  <!-- Subtle texture dots (decorative) -->
+  <circle cx="60"  cy="80"  r="3" fill="#4A7C6F" opacity="0.4"/>
+  <circle cx="120" cy="140" r="2" fill="#7A9E7E" opacity="0.35"/>
+  <circle cx="80"  cy="200" r="4" fill="#4A7C6F" opacity="0.25"/>
+  <circle cx="200" cy="60"  r="2.5" fill="#7A9E7E" opacity="0.3"/>
+  <circle cx="320" cy="110" r="3" fill="#4A7C6F" opacity="0.2"/>
+  <circle cx="160" cy="320" r="3.5" fill="#7A9E7E" opacity="0.3"/>
+  <circle cx="300" cy="400" r="2" fill="#4A7C6F" opacity="0.25"/>
+  <circle cx="90"  cy="480" r="3" fill="#7A9E7E" opacity="0.2"/>
+  <circle cx="360" cy="550" r="2.5" fill="#4A7C6F" opacity="0.3"/>
+
+  <!-- Tree mark (brand symbol) — centered on left panel -->
+  <g transform="translate(210,230)">
+    <g fill="none" stroke="#FAFAF7" stroke-width="3" stroke-linecap="round">
+      <path d="M0 50 V0"/>
+      <path d="M0 50 q-8 3 -14 8"/>
+      <path d="M0 50 q8 3 14 8"/>
+    </g>
+    <circle cx="0"   cy="-30" r="9"  fill="#C2714F"/>
+    <circle cx="-18" cy="-14" r="8"  fill="#D49A4C"/>
+    <circle cx="18"  cy="-14" r="8"  fill="#7A9E7E"/>
+    <circle cx="-28" cy="6"   r="7"  fill="#6B8FAE"/>
+    <circle cx="28"  cy="6"   r="7"  fill="#8A6FA8"/>
+    <circle cx="-13" cy="-3"  r="6"  fill="#5C9A91"/>
+    <circle cx="13"  cy="-3"  r="6"  fill="#B38B59"/>
+  </g>
+
+  <!-- Brand name on left panel -->
+  <text x="210" y="380" font-family="Georgia, serif" font-size="42" font-weight="bold" fill="#FAFAF7" text-anchor="middle" letter-spacing="2">Kalebu</text>
+  <text x="210" y="412" font-family="Georgia, serif" font-size="16" fill="#7A9E7E" text-anchor="middle" letter-spacing="3">TERAPÉUTICO</text>
+
+  <!-- Right content area -->
+  <!-- Main headline -->
+  <text x="540" y="220" font-family="Georgia, serif" font-size="58" font-weight="bold" fill="#2D5016" text-anchor="middle">Juntos encontramos</text>
+  <text x="540" y="290" font-family="Georgia, serif" font-size="58" font-weight="bold" fill="#2D5016" text-anchor="middle">el camino.</text>
+
+  <!-- Supporting text -->
+  <text x="540" y="360" font-family="Arial, sans-serif" font-size="22" fill="#4A7C6F" text-anchor="middle">Centro Educativo Terapéutico · Morón, Zona Oeste</text>
+
+  <!-- Divider line -->
+  <line x1="480" y1="395" x2="600" y2="395" stroke="#D49A4C" stroke-width="2"/>
+
+  <!-- Specialties -->
+  <text x="540" y="440" font-family="Arial, sans-serif" font-size="17" fill="#6B7280" text-anchor="middle">Psicología · Fonoaudiología · Psicomotricidad</text>
+  <text x="540" y="466" font-family="Arial, sans-serif" font-size="17" fill="#6B7280" text-anchor="middle">Musicoterapia · Terapia Ocupacional · Psicopedagogía</text>
+
+  <!-- CTA / URL -->
+  <rect x="430" y="498" width="220" height="46" rx="23" fill="#2D5016"/>
+  <text x="540" y="527" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FAFAF7" text-anchor="middle">kalebu.com.ar</text>
+
+  <!-- Bottom strip -->
+  <rect x="420" y="590" width="780" height="40" fill="#F2EDE4"/>
+  <text x="810" y="615" font-family="Arial, sans-serif" font-size="14" fill="#9B9588" text-anchor="middle">Obra social y particular · WhatsApp 11 7366-4757</text>
+</svg>

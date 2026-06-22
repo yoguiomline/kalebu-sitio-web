@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" fill="none">
+
+  <!-- Hojas (detrás de la figura) -->
+  <!-- izquierda teal -->
+  <ellipse cx="59"  cy="76"  rx="9.5" ry="21" fill="#8EC8C4" transform="rotate(-62 59 76)"/>
+  <!-- izquierda lavanda -->
+  <ellipse cx="73"  cy="50"  rx="9.5" ry="21" fill="#B8AECC" transform="rotate(-40 73 50)"/>
+  <!-- centro-izq sage -->
+  <ellipse cx="89"  cy="34"  rx="9.5" ry="21" fill="#ACCAA6" transform="rotate(-16 89 34)"/>
+  <!-- centro-der cyan -->
+  <ellipse cx="111" cy="34"  rx="9.5" ry="21" fill="#8CC8CA" transform="rotate(16 111 34)"/>
+  <!-- derecha durazno -->
+  <ellipse cx="127" cy="50"  rx="9.5" ry="21" fill="#EAB8AC" transform="rotate(40 127 50)"/>
+  <!-- derecha amarillo -->
+  <ellipse cx="141" cy="76"  rx="9.5" ry="21" fill="#EEDAA0" transform="rotate(62 141 76)"/>
+
+  <!-- Figura (gris pizarra) -->
+  <!-- Brazo izquierdo -->
+  <line x1="90"  y1="78" x2="68"  y2="56" stroke="#6E7C82" stroke-width="15" stroke-linecap="round"/>
+  <!-- Brazo derecho -->
+  <line x1="110" y1="78" x2="132" y2="56" stroke="#6E7C82" stroke-width="15" stroke-linecap="round"/>
+  <!-- Torso (se ensancha hacia abajo) -->
+  <path d="M 87 72 C 83 104 79 130 76 156 L 124 156 C 121 130 117 104 113 72 Z" fill="#6E7C82"/>
+  <!-- Cabeza -->
+  <circle cx="100" cy="54" r="13" fill="#6E7C82"/>
+
+  <!-- Texto KALEBU -->
+  <text
+    x="103"
+    y="203"
+    text-anchor="middle"
+    font-family="'Helvetica Neue', 'Arial', Helvetica, sans-serif"
+    font-weight="600"
+    font-size="23"
+    letter-spacing="9"
+    fill="#6E7C82">KALEBU</text>
+
+</svg>

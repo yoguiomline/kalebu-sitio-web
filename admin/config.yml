@@ -1,0 +1,93 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "imagenes"
+public_folder: "/imagenes"
+
+locale: es
+
+collections:
+  - name: "paginas"
+    label: "Páginas del sitio"
+    files:
+
+      - label: "Inicio"
+        name: "inicio"
+        file: "_contenido/inicio.json"
+        fields:
+          - label: "Hero — Título principal"
+            name: "hero_titulo"
+            widget: "string"
+            hint: "Ej: Juntos encontramos el camino."
+          - label: "Hero — Descripción"
+            name: "hero_texto"
+            widget: "text"
+          - label: "Hero — Frase (itálica)"
+            name: "hero_frase"
+            widget: "string"
+          - label: "Hero — Nota debajo del botón"
+            name: "hero_nota"
+            widget: "string"
+          - label: "Hero — Imagen principal"
+            name: "hero_imagen"
+            widget: "image"
+            required: false
+
+      - label: "Niños y adolescentes"
+        name: "ninos"
+        file: "_contenido/ninos.json"
+        fields:
+          - label: "Hero — Título"
+            name: "hero_titulo"
+            widget: "string"
+          - label: "Hero — Descripción"
+            name: "hero_texto"
+            widget: "text"
+          - label: "Hero — Imagen"
+            name: "hero_imagen"
+            widget: "image"
+            required: false
+
+      - label: "Adultos"
+        name: "adultos"
+        file: "_contenido/adultos.json"
+        fields:
+          - label: "Hero — Título"
+            name: "hero_titulo"
+            widget: "string"
+          - label: "Hero — Descripción"
+            name: "hero_texto"
+            widget: "text"
+          - label: "Hero — Imagen"
+            name: "hero_imagen"
+            widget: "image"
+            required: false
+
+      - label: "Nosotros"
+        name: "nosotros"
+        file: "_contenido/nosotros.json"
+        fields:
+          - label: "Hero — Título"
+            name: "hero_titulo"
+            widget: "string"
+          - label: "Hero — Descripción"
+            name: "hero_texto"
+            widget: "text"
+          - label: "Historia — Texto principal"
+            name: "historia_texto"
+            widget: "text"
+
+      - label: "Contacto"
+        name: "contacto"
+        file: "_contenido/contacto.json"
+        fields:
+          - label: "Dirección"
+            name: "direccion"
+            widget: "string"
+          - label: "Teléfono / WhatsApp"
+            name: "telefono"
+            widget: "string"
+          - label: "Horario"
+            name: "horario"
+            widget: "string"

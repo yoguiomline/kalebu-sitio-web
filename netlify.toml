@@ -1,6 +1,10 @@
 [build]
   publish = "."
 
+# Netlify Identity + Git Gateway para Decap CMS
+[build.environment]
+  NODE_VERSION = "18"
+
 # Seguridad para todas las páginas
 [[headers]]
   for = "/*"

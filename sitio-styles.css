@@ -53,8 +53,8 @@ button { font: inherit; cursor: pointer; }
 
 /* ─── Layout helpers ─────────────────────────────────────────── */
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
-.section { padding: 64px 0; }
-.section--tight { padding: 44px 0; }
+.section { padding: 48px 0; }
+.section--tight { padding: 30px 0; }
 .center { text-align: center; }
 .stack > * + * { margin-top: 16px; }
 
@@ -228,6 +228,19 @@ p { text-wrap: pretty; }
   transition: transform .15s ease, box-shadow .18s ease;
 }
 .card--panel { background: var(--panel); border-color: transparent; box-shadow: none; }
+.card--wa {
+  cursor: pointer; text-decoration: none; display: block; color: inherit;
+  transition: transform .15s ease, box-shadow .18s ease, border-color .15s ease;
+}
+.card--wa:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--line-2); }
+.card--wa .wa-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 14px; padding: 8px 16px; border-radius: 999px;
+  background: var(--primary); color: #fff;
+  font-size: 13.5px; font-weight: 600;
+}
+.card--wa.warm .wa-chip { background: var(--warm); }
+.card--wa .wa-chip svg { flex-shrink: 0; }
 .card-ico {
   width: 50px; height: 50px; border-radius: 14px;
   background: rgba(74,124,111,.12); color: var(--secondary);
@@ -391,8 +404,14 @@ p { text-wrap: pretty; }
   .nav { display: flex; }
   .header-cta { display: inline-flex; }
   .menu-btn { display: none; }
-  .hero { padding: 84px 0 88px; }
-  .hero-grid { grid-template-columns: 1fr 1.15fr; gap: 48px; }
+  .hero { padding: 64px 0 68px; }
+  .hero-grid { grid-template-columns: 1fr 2.5fr; gap: 0; align-items: stretch; }
+  .hero-grid > img {
+    height: 100%; min-height: 480px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.85) 20%, black 35%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.85) 20%, black 35%);
+    box-shadow: none; border-radius: var(--radius-lg);
+  }
   .section { padding: 84px 0; }
   .grid--3 { grid-template-columns: repeat(3, 1fr); }
   .team-grid { grid-template-columns: repeat(3, 1fr); }

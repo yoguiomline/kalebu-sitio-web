@@ -53,7 +53,7 @@
           ${MARK}
           <span class="brand-text">
             <span class="brand-name">Kalebu</span>
-            <span class="brand-sub">Terapéutico · CET</span>
+            <span class="brand-sub">CET · Centro Espacio Terapéutico</span>
           </span>
         </a>
         <nav class="nav">${navLinks}</nav>
@@ -73,7 +73,7 @@
       <div class="drawer-shade" data-close></div>
       <div class="drawer-panel">
         <div class="drawer-head">
-          <a class="brand" href="/">${MARK}<span class="brand-text"><span class="brand-name">Kalebu</span><span class="brand-sub">Terapéutico</span></span></a>
+          <a class="brand" href="/">${MARK}<span class="brand-text"><span class="brand-name">Kalebu</span><span class="brand-sub">CET · Centro Espacio Terapéutico</span></span></a>
           <button class="menu-btn" data-close aria-label="Cerrar menú">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
           </button>
@@ -89,7 +89,7 @@
       <div class="wrap">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a class="brand" href="/">${MARK}<span class="brand-text"><span class="brand-name">Kalebu</span><span class="brand-sub">Terapéutico · CET</span></span></a>
+            <a class="brand" href="/">${MARK}<span class="brand-text"><span class="brand-name">Kalebu</span><span class="brand-sub">CET · Centro Espacio Terapéutico</span></span></a>
             <p>Juntos encontramos el camino. Centro Educativo Terapéutico en Zona Oeste. 🌱</p>
           </div>
           <div class="footer-col">

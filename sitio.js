@@ -104,7 +104,13 @@
           </div>
           <div class="footer-col">
             <h4>Zona de cobertura</h4>
-            <p>Morón · Merlo · Padua<br>Castelar · Ituzaingó</p>
+            <a href="/haedo">Psicólogo en Haedo</a>
+            <a href="/castelar">Psicólogo en Castelar</a>
+            <a href="/merlo">Psicólogo en Merlo</a>
+            <a href="/ituzaingo">Psicólogo en Ituzaingó</a>
+            <a href="/hurlingham">Psicólogo en Hurlingham</a>
+            <a href="/el-palomar">Psicólogo en El Palomar</a>
+            <a href="/ramos-mejia">Psicólogo en Ramos Mejía</a>
           </div>
           <div class="footer-col">
             <h4>Obras sociales</h4>

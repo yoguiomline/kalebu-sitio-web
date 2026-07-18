@@ -2,6 +2,31 @@
 // Inyecta header, footer y botón flotante de WhatsApp en cada página.
 // Cada página define: <body data-page="home"> (home | ninos | adultos | nosotros | contacto)
 
+// ── Píxel de Meta ─────────────────────────────────────────────────────────
+// Mide visitas y clics a WhatsApp para las campañas de Meta Ads.
+(function () {
+  const PIXEL_ID = "1352810583459560"; // Píxel "Kalebu Web"
+
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
+
+  // Cada clic a WhatsApp cuenta como contacto — es la conversión que nos importa.
+  document.addEventListener('click', (e) => {
+    const wa = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+    if (!wa) return;
+    fbq('track', 'Contact', {
+      content_name: document.body.dataset.page || 'home',
+      content_category: 'whatsapp'
+    });
+  });
+})();
+
 (function () {
   const WA = "https://wa.me/message/PY6KR3HE6FSEK1";
   const IG = "https://instagram.com/kalebu_espacioterapeutico";

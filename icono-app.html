@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ícono app Kalebu 1024×1024</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;
+       justify-content:center;gap:22px;background:#333;font-family:system-ui,sans-serif;color:#fff;padding:30px}
+  #vista{width:320px;height:320px;border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+  button{background:#2D5016;color:#fff;border:0;padding:15px 30px;border-radius:999px;
+         font-size:16px;font-weight:600;cursor:pointer}
+  button:hover{background:#1f3810}
+  p{opacity:.75;font-size:14px;margin:0;text-align:center;max-width:420px;line-height:1.5}
+  canvas{display:none}
+</style>
+</head>
+<body>
+  <img id="vista" alt="Vista previa del ícono">
+  <button id="bajar">Descargar PNG 1024×1024</button>
+  <p>Este es el ícono para la app Kalebu Hub en Meta. Descargalo y subilo en
+     developers.facebook.com → Kalebu Hub → Configuración → Básica → Ícono de la app.</p>
+  <canvas id="lienzo" width="1024" height="1024"></canvas>
+
+<script>
+const SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#F2EDE4"/>
+  <g transform="translate(512 545) scale(3.4) translate(-100 -115)">
+    <ellipse cx="59"  cy="76"  rx="9.5" ry="21" fill="#8EC8C4" transform="rotate(-62 59 76)"/>
+    <ellipse cx="73"  cy="50"  rx="9.5" ry="21" fill="#B8AECC" transform="rotate(-40 73 50)"/>
+    <ellipse cx="89"  cy="34"  rx="9.5" ry="21" fill="#ACCAA6" transform="rotate(-16 89 34)"/>
+    <ellipse cx="111" cy="34"  rx="9.5" ry="21" fill="#8CC8CA" transform="rotate(16 111 34)"/>
+    <ellipse cx="127" cy="50"  rx="9.5" ry="21" fill="#EAB8AC" transform="rotate(40 127 50)"/>
+    <ellipse cx="141" cy="76"  rx="9.5" ry="21" fill="#EEDAA0" transform="rotate(62 141 76)"/>
+    <line x1="90"  y1="78" x2="68"  y2="56" stroke="#6E7C82" stroke-width="15" stroke-linecap="round"/>
+    <line x1="110" y1="78" x2="132" y2="56" stroke="#6E7C82" stroke-width="15" stroke-linecap="round"/>
+    <path d="M 87 72 C 83 104 79 130 76 156 L 124 156 C 121 130 117 104 113 72 Z" fill="#6E7C82"/>
+    <circle cx="100" cy="54" r="13" fill="#6E7C82"/>
+  </g>
+</svg>`;
+
+const url = URL.createObjectURL(new Blob([SVG], {type:'image/svg+xml'}));
+const img = new Image();
+
+img.onload = () => {
+  const ctx = document.getElementById('lienzo').getContext('2d');
+  ctx.drawImage(img, 0, 0, 1024, 1024);
+  document.getElementById('vista').src = url;
+};
+img.src = url;
+
+document.getElementById('bajar').onclick = () => {
+  try {
+    const a = document.createElement('a');
+    a.download = 'kalebu-app-icon-1024.png';
+    a.href = document.getElementById('lienzo').toDataURL('image/png');
+    a.click();
+  } catch (err) {
+    alert('El navegador bloqueó la exportación. Hacé clic derecho sobre la imagen de arriba y "Guardar imagen como…"');
+  }
+};
+</script>
+</body>
+</html>

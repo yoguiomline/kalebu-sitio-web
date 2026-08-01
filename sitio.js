@@ -120,8 +120,12 @@
           <div class="footer-col">
             <h4>Navegación</h4>
             ${NAV.map(n => `<a href="${n.href}">${n.label}</a>`).join("")}
+            <a href="/psicologia">Psicólogo en Morón</a>
             <a href="/fonoaudiologia">Fonoaudiología en Morón</a>
+            <a href="/psicopedagogia">Psicopedagogía en Morón</a>
+            <a href="/psicomotricidad">Psicomotricidad en Morón</a>
             <a href="/musicoterapia">Musicoterapia en Morón</a>
+            <a href="/terapia-ocupacional">Terapia Ocupacional en Morón</a>
           </div>
           <div class="footer-col">
             <h4>Contacto</h4>

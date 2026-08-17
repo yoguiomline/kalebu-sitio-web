@@ -152,6 +152,7 @@
         <div class="footer-bottom">
           <span>© ${new Date().getFullYear()} Kalebu Terapéutico — Centro Educativo Terapéutico.</span>
           <span>Atención presencial · Obra social y particular.</span>
+          <span><a href="/privacidad">Política de privacidad</a></span>
         </div>
       </div>
     </footer>`;

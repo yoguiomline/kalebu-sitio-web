@@ -17,13 +17,38 @@
   fbq('track', 'PageView');
 
   // Cada clic a WhatsApp cuenta como contacto — es la conversión que nos importa.
+  //
+  // Se manda por dos vías a propósito. El pedido normal del píxel se pierde cuando
+  // el toque salta a la app de WhatsApp y el navegador descarta lo que quedó
+  // pendiente — pasa sobre todo en el navegador interno de Instagram. sendBeacon
+  // el navegador lo entrega igual, aunque la página se cierre. Las dos llevan el
+  // mismo eventID, así que Meta las deduplica y cuenta un solo contacto.
   document.addEventListener('click', (e) => {
     const wa = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
     if (!wa) return;
+
+    const page = document.body.dataset.page || 'home';
+    const eventID = 'wa-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+
     fbq('track', 'Contact', {
-      content_name: document.body.dataset.page || 'home',
+      content_name: page,
       content_category: 'whatsapp'
-    });
+    }, { eventID: eventID });
+
+    if (navigator.sendBeacon) {
+      const p = new URLSearchParams({
+        id: PIXEL_ID,
+        ev: 'Contact',
+        eid: eventID,
+        dl: location.href,
+        rl: document.referrer,
+        ts: String(Date.now()),
+        'cd[content_name]': page,
+        'cd[content_category]': 'whatsapp',
+        noscript: '0'
+      });
+      try { navigator.sendBeacon('https://www.facebook.com/tr/?' + p.toString()); } catch (err) {}
+    }
   });
 })();
 

@@ -56,6 +56,7 @@
   const WA = "https://wa.me/message/PY6KR3HE6FSEK1";
   const IG = "https://instagram.com/kalebu_espacioterapeutico";
   const PHONE_LABEL = "11 7366-4757";
+  const MAPS = "https://www.google.com/maps/search/?api=1&query=Gral.+Tom%C3%A1s+Guido+642%2C+Mor%C3%B3n%2C+Buenos+Aires";
 
   const NAV = [
     { id: "home",     label: "Inicio",                href: "/" },
@@ -154,7 +155,7 @@
           </div>
           <div class="footer-col">
             <h4>Contacto</h4>
-            <div class="footer-line">${pin}<span>Morón, Zona Oeste<br>Buenos Aires</span></div>
+            <div class="footer-line">${pin}<a href="${MAPS}" target="_blank" rel="noopener">Gral. Tomás Guido 642<br>Morón, Buenos Aires</a></div>
             <div class="footer-line">${phoneIco}<a href="${WA}" target="_blank" rel="noopener">WhatsApp ${PHONE_LABEL}</a></div>
             <div class="footer-line">${igIco}<a href="${IG}" target="_blank" rel="noopener">@kalebu_espacioterapeutico</a></div>
           </div>

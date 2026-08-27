@@ -69,19 +69,12 @@
   const page = document.body.dataset.page || "home";
 
   // ── Brand mark — figura Kalebu (figura humana con hojas) ─────────────────
+  // El logo oficial de Kalebu: el arbol de dos troncos. Antes aca habia un SVG
+  // dibujado a mano (una figura humana con hojas en teal y lavanda) que no era
+  // el logo de la marca ni usaba sus colores. Se reemplazo por el archivo real.
   const MARK = `
-    <svg class="brand-mark" viewBox="0 0 200 230" aria-hidden="true">
-      <ellipse cx="59"  cy="76"  rx="9.5" ry="21" fill="#8EC8C4" transform="rotate(-62 59 76)"/>
-      <ellipse cx="73"  cy="50"  rx="9.5" ry="21" fill="#B8AECC" transform="rotate(-40 73 50)"/>
-      <ellipse cx="89"  cy="34"  rx="9.5" ry="21" fill="#ACCAA6" transform="rotate(-16 89 34)"/>
-      <ellipse cx="111" cy="34"  rx="9.5" ry="21" fill="#8CC8CA" transform="rotate(16 111 34)"/>
-      <ellipse cx="127" cy="50"  rx="9.5" ry="21" fill="#EAB8AC" transform="rotate(40 127 50)"/>
-      <ellipse cx="141" cy="76"  rx="9.5" ry="21" fill="#EEDAA0" transform="rotate(62 141 76)"/>
-      <line x1="90"  y1="78" x2="68"  y2="56" stroke="#6E7C82" stroke-width="15" stroke-linecap="round"/>
-      <line x1="110" y1="78" x2="132" y2="56" stroke="#6E7C82" stroke-width="15" stroke-linecap="round"/>
-      <path d="M 87 72 C 83 104 79 130 76 156 L 124 156 C 121 130 117 104 113 72 Z" fill="#6E7C82"/>
-      <circle cx="100" cy="54" r="13" fill="#6E7C82"/>
-    </svg>`;
+    <img class="brand-mark" src="/logo-kalebu.png" alt="" aria-hidden="true"
+         width="229" height="260" decoding="async">`;
 
   const waIco = (s = 24) => `
     <svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

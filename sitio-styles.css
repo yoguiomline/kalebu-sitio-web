@@ -18,6 +18,19 @@
   --warm-ink: #9e5638;
   --warm-soft: #f4e6de;
 
+  /* Paleta oficial de la marca, muestreada del logo definitivo
+     ("Logo oficial oscuro.png"). Son los colores reales de las hojas del
+     arbol, no una aproximacion: sirven para que las piezas de campaña y las
+     landings hablen el mismo idioma que el logo. */
+  --marca-verde:   #324C1A;  /* verde del texto y los troncos */
+  --marca-hoja:    #405038;  /* verde profundo de la hoja grande */
+  --marca-salvia:  #687848;  /* verde oliva claro */
+  --marca-rosa:    #B06078;  /* rosa/magenta de las hojas */
+  --marca-coral:   #E89070;  /* coral de las hojas chicas */
+  --marca-rosa-soft:  #f3e4e8;
+  --marca-coral-soft: #fbebe3;
+  --marca-salvia-soft:#eaefe0;
+
   --wa: #25D366;
 
   --line: rgba(45,80,22,.10);
@@ -95,6 +108,12 @@ p { text-wrap: pretty; }
 .ctaband--warm .btn--wa { color: var(--warm-ink); }
 .btn--ghost { background: #fff; color: var(--primary); border-color: var(--line-2); }
 .btn--ghost:hover { background: var(--panel); transform: translateY(-2px); }
+
+/* Se usaba en las 8 paginas de zona y en contacto, pero nunca estuvo definida:
+   esos botones se veian sin borde ni color, como texto suelto dentro de una
+   capsula transparente. */
+.btn--outline { background: transparent; color: var(--primary); border-color: var(--primary); }
+.btn--outline:hover { background: var(--primary); color: #fff; transform: translateY(-2px); }
 .btn--lg { padding: 18px 32px; font-size: 17.5px; }
 .btn--block { width: 100%; }
 
@@ -110,7 +129,9 @@ p { text-wrap: pretty; }
   height: 70px; gap: 16px;
 }
 .brand { display: flex; align-items: center; gap: 11px; }
-.brand-mark { width: 38px; height: 38px; flex-shrink: 0; }
+/* El logo es mas alto que ancho (el arbol): se fija el alto y el ancho sigue
+   la proporcion, si no queda aplastado. */
+.brand-mark { width: auto; height: 42px; flex-shrink: 0; object-fit: contain; }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand-name { font-family: var(--font-display); font-size: 21px; color: var(--primary); }
 .brand-sub { font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-top: 3px; }

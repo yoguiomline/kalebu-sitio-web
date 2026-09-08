@@ -2,6 +2,27 @@
 // Inyecta header, footer y botón flotante de WhatsApp en cada página.
 // Cada página define: <body data-page="home"> (home | ninos | adultos | nosotros | contacto)
 
+// ── Google Analytics 4 ────────────────────────────────────────────────────
+// Responde lo que el píxel de Meta no puede: qué páginas se miran, de dónde
+// llega la gente, cuánto se queda y dónde se va. El píxel sirve para que Meta
+// optimice anuncios; esto sirve para entender el sitio. Son cosas distintas.
+//
+// Va acá y no pegado en el <head> de cada página a propósito: son 18 páginas,
+// y mantener 18 copias del mismo bloque termina en que alguna queda vieja.
+(function () {
+  const GA_ID = "G-WE9KLQ7Y8S"; // Propiedad "Kalebu"
+
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+})();
+
 // ── Píxel de Meta ─────────────────────────────────────────────────────────
 // Mide visitas y clics a WhatsApp para las campañas de Meta Ads.
 (function () {
@@ -34,6 +55,16 @@
       content_name: page,
       content_category: 'whatsapp'
     }, { eventID: eventID });
+
+    // El mismo clic, también a Analytics. Sin esto GA sólo cuenta visitas y no
+    // se puede saber qué página convierte: la de fono trae muchas visitas y
+    // pocos contactos, y la de zona al revés. Ese contraste es el dato útil.
+    if (window.gtag) {
+      gtag('event', 'contacto_whatsapp', {
+        pagina: page,
+        transport_type: 'beacon' // se entrega aunque el navegador salte a WhatsApp
+      });
+    }
 
     if (navigator.sendBeacon) {
       const p = new URLSearchParams({

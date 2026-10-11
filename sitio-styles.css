@@ -439,6 +439,30 @@ p { text-wrap: pretty; }
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; }
 }
 
+/* En PC el contenido va de extremo a extremo: sin tope de ancho, solo un
+   margen lateral que crece con la pantalla. Los textos largos conservan su
+   propio ancho máximo (en ch) para que las líneas se sigan leyendo bien. */
+@media (min-width: 920px) {
+  :root { --maxw: none; --pad: clamp(32px, 4.5vw, 96px); --hero-h: clamp(460px, 68vh, 720px); }
+  .hero .lede { max-width: 36ch; }
+  /* La foto del hero llega hasta el borde derecho de la pantalla y no pasa
+     de un alto razonable. Los !important pisan los estilos en línea que
+     traen las fotos en cada página. */
+  .hero-grid > :last-child {
+    margin-right: calc(-1 * var(--pad));
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg) !important;
+  }
+  .hero-grid > img:last-child { width: calc(100% + var(--pad)) !important; max-width: none !important; height: var(--hero-h) !important; min-height: 0 !important; box-shadow: none !important; }
+  .hero-grid > div:last-child[style*="height"] { height: var(--hero-h) !important; }
+  /* Niños: tres fotos en mosaico */
+  .hero--warm .hero-grid > :last-child > div:first-child { height: calc(var(--hero-h) * .55) !important; }
+  .hero--warm .hero-grid > :last-child > div:last-child > div { height: calc(var(--hero-h) * .45 - 10px) !important; }
+  .hero--warm .hero-grid > :last-child div { border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important; }
+}
+@media (min-width: 1400px) {
+  .member-photo { height: 300px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; scroll-behavior: auto; }
 }

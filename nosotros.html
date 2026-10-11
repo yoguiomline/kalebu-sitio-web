@@ -43,32 +43,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="sitio-styles.css?v=20261011b" />
+  <link rel="stylesheet" href="sitio-styles.css?v=20261011c" />
 </head>
 <body data-page="nosotros">
 
   <!-- HERO -->
   <section class="hero">
-    <div class="wrap" style="max-width:760px; text-align:center; margin:0 auto;">
-      <p class="eyebrow">Nosotros</p>
-      <h1>Detrás de Kalebu hay un equipo que se volvió familia.</h1>
-      <p class="lede" style="margin:18px auto 0; max-width:50ch;">Juntos encontramos el camino. Porque dar el primer paso no es fácil, y por eso te acompañamos con empatía, todos los días. 🤍</p>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Nosotros</p>
+        <h1>Detrás de Kalebu hay un equipo que se volvió familia.</h1>
+        <p class="lede">Juntos encontramos el camino. Porque dar el primer paso no es fácil, y por eso te acompañamos con empatía, todos los días. 🤍</p>
+      </div>
+      <img src="hall-kalebu.jpg" alt="La sala de espera de Kalebu, con el mural Cada persona brilla a su manera" style="width:100%; height:100%; min-height:340px; object-fit:cover; object-position:50% 50%; border-radius:var(--radius-lg); display:block;">
     </div>
   </section>
 
-  <!-- HISTORIA -->
-  <section class="section section--tight">
-    <div class="wrap grid grid--2" style="align-items:center;">
+  <!-- HISTORIA: solo texto, a lo ancho -->
+  <section class="section">
+    <div class="wrap grid grid--2" style="align-items:start; column-gap:clamp(32px, 6vw, 120px);">
       <div>
         <p class="eyebrow">Nuestra historia</p>
-        <h2>Empezó con una amistad y un sueño compartido.</h2>
-        <div class="stack" style="margin-top:18px;">
-          <p class="lede">Natalia y Mariela se conocieron trabajando, se hicieron amigas y bromeaban con tener algún día su propio espacio.</p>
-          <p style="color:var(--ink-muted);">Hace tres años ese sueño se hizo realidad y abrieron Kalebu. Hoy lo comparten con todo un equipo y con cada familia que llega, en un espacio pensado para que estar acá sea accesible para quien lo necesite.</p>
-        </div>
+        <h2 style="font-size:clamp(30px, 3.4vw, 54px);">Empezó con una amistad y un sueño compartido.</h2>
       </div>
-      <!-- Foto del espacio hasta tener una foto real del equipo completo -->
-      <img src="consultorio-materiales.jpg" alt="Uno de los consultorios de Kalebu, con materiales de juego sobre la mesa" style="width:100%; height:100%; min-height:420px; object-fit:cover; border-radius:var(--radius-lg); display:block;">
+      <div class="stack">
+        <p class="lede">Natalia y Mariela se conocieron trabajando, se hicieron amigas y bromeaban con tener algún día su propio espacio.</p>
+        <p class="lede" style="color:var(--ink-muted);">Hace tres años ese sueño se hizo realidad y abrieron Kalebu. Hoy lo comparten con todo un equipo y con cada familia que llega, en un espacio pensado para que estar acá sea accesible para quien lo necesite.</p>
+      </div>
     </div>
   </section>
 
@@ -81,7 +82,7 @@
       </div>
       <div class="team-grid">
         <div class="member">
-          <img class="member-photo" src="equipo-natalia.jpg" alt="Natalia Bousquet, psicóloga y co-fundadora de Kalebu" style="width:100%; object-fit:cover; object-position:100% 35%; display:block;">
+          <img class="member-photo" src="equipo-natalia.jpg" alt="Natalia Bousquet, psicóloga y co-fundadora de Kalebu">
           <div class="member-body">
             <div class="member-name">Natalia Bousquet</div>
             <div class="member-role">Psicóloga</div>
@@ -105,7 +106,7 @@
           </div>
         </div>
         <div class="member">
-          <img class="member-photo" src="equipo-caro.jpg" alt="Caro, psicóloga de Kalebu" style="width:100%; object-fit:cover; object-position:50% 35%; display:block;">
+          <img class="member-photo" src="equipo-caro.jpg" alt="Caro, psicóloga de Kalebu">
           <div class="member-body">
             <div class="member-name">Caro</div>
             <div class="member-role">Psicóloga</div>
@@ -113,7 +114,7 @@
           </div>
         </div>
         <div class="member">
-          <img class="member-photo" src="equipo-flor.jpg" alt="Flor, musicoterapeuta de Kalebu" style="width:100%; object-fit:cover; object-position:50% 60%; display:block;">
+          <img class="member-photo" src="equipo-flor.jpg" alt="Flor, musicoterapeuta de Kalebu">
           <div class="member-body">
             <div class="member-name">Flor</div>
             <div class="member-role">Musicoterapeuta</div>
@@ -121,7 +122,7 @@
           </div>
         </div>
         <div class="member">
-          <img class="member-photo" src="equipo-milena.jpg" alt="Milena Mazaira, terapista ocupacional de Kalebu" style="width:100%; object-fit:cover; object-position:50% 55%; display:block;">
+          <img class="member-photo" src="equipo-milena.jpg" alt="Milena Mazaira, terapista ocupacional de Kalebu">
           <div class="member-body">
             <div class="member-name">Milena Mazaira</div>
             <div class="member-role">Terapista ocupacional</div>
@@ -129,7 +130,7 @@
           </div>
         </div>
         <div class="member">
-          <img class="member-photo" src="equipo-rocio.jpg" alt="Rocío, psicopedagoga de Kalebu" style="width:100%; object-fit:cover; object-position:50% 40%; display:block;">
+          <img class="member-photo" src="equipo-rocio.jpg" alt="Rocío, psicopedagoga de Kalebu">
           <div class="member-body">
             <div class="member-name">Rocío</div>
             <div class="member-role">Psicopedagoga</div>

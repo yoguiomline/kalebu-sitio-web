@@ -443,21 +443,27 @@ p { text-wrap: pretty; }
    margen lateral que crece con la pantalla. Los textos largos conservan su
    propio ancho máximo (en ch) para que las líneas se sigan leyendo bien. */
 @media (min-width: 920px) {
-  :root { --maxw: none; --pad: clamp(32px, 4.5vw, 96px); --hero-h: clamp(460px, 68vh, 720px); }
+  /* --hero-h: el alto de la pantalla menos el header (70px + borde). */
+  :root { --maxw: none; --pad: clamp(32px, 4.5vw, 96px); --hero-h: clamp(560px, calc(100vh - 71px), 940px); }
   .hero .lede { max-width: 36ch; }
-  /* La foto del hero llega hasta el borde derecho de la pantalla y no pasa
-     de un alto razonable. Los !important pisan los estilos en línea que
-     traen las fotos en cada página. */
-  .hero-grid > :last-child {
+  /* Heros con foto: la foto va pegada al header, al bloque de abajo y al
+     borde derecho, y es casi cuadrada para que se vea entera. El texto
+     queda centrado en la columna izquierda. Los !important pisan los
+     estilos en línea que traen las fotos en cada página. */
+  .hero:has(.hero-grid) { padding: 0; }
+  .hero .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(32px, 4vw, 72px); align-items: stretch; }
+  .hero .hero-grid > :first-child { align-self: center; padding: 56px 0; min-width: 0; }
+  .hero .hero-note { flex-wrap: wrap; }
+  .hero .hero-grid > :last-child {
     margin-right: calc(-1 * var(--pad));
-    border-radius: var(--radius-lg) 0 0 var(--radius-lg) !important;
+    border-radius: 0 !important;
   }
-  .hero-grid > img:last-child { width: calc(100% + var(--pad)) !important; max-width: none !important; height: var(--hero-h) !important; min-height: 0 !important; box-shadow: none !important; }
-  .hero-grid > div:last-child[style*="height"] { height: var(--hero-h) !important; }
+  .hero .hero-grid > img:last-child { width: calc(100% + var(--pad)) !important; max-width: none !important; height: var(--hero-h) !important; min-height: 0 !important; box-shadow: none !important; }
+  .hero .hero-grid > div:last-child[style*="height"] { height: var(--hero-h) !important; }
   /* Niños: tres fotos en mosaico */
-  .hero--warm .hero-grid > :last-child > div:first-child { height: calc(var(--hero-h) * .55) !important; }
-  .hero--warm .hero-grid > :last-child > div:last-child > div { height: calc(var(--hero-h) * .45 - 10px) !important; }
-  .hero--warm .hero-grid > :last-child div { border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important; }
+  .hero--warm .hero-grid > :last-child > div:first-child { height: calc(var(--hero-h) * .55 - 5px) !important; }
+  .hero--warm .hero-grid > :last-child > div:last-child > div { height: calc(var(--hero-h) * .45 - 5px) !important; }
+  .hero--warm .hero-grid > :last-child div { border-radius: 0 !important; }
 }
 @media (min-width: 1400px) {
   .member-photo { height: 300px; }

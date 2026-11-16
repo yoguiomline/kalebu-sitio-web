@@ -74,9 +74,23 @@
     // El mismo clic, también a Analytics. Sin esto GA sólo cuenta visitas y no
     // se puede saber qué página convierte: la de fono trae muchas visitas y
     // pocos contactos, y la de zona al revés. Ese contraste es el dato útil.
+    // Qué botón fue: cada página tiene 8-10 links a WhatsApp (hero, tarjetas,
+    // cierre, flotante, menú, footer). Sin esto se sabe que la página convierte
+    // pero no qué parte de la página hace el trabajo.
+    const seccion = wa.closest('section');
+    const titulo = seccion && seccion.querySelector('h1, h2');
+    const boton =
+      wa.closest('.wa-float')    ? 'flotante' :
+      wa.closest('.drawer')      ? 'menu' :
+      wa.closest('.site-footer') ? 'footer' :
+      wa.closest('.hero')        ? 'hero' :
+      (wa.classList.contains('card--wa') ? 'tarjeta: ' : 'seccion: ') +
+        (titulo ? titulo.textContent.trim().replace(/\s+/g, ' ').slice(0, 60) : 'sin titulo');
+
     if (window.gtag) {
       gtag('event', 'contacto_whatsapp', {
         pagina: page,
+        boton: boton,
         transport_type: 'beacon' // se entrega aunque el navegador salte a WhatsApp
       });
     }

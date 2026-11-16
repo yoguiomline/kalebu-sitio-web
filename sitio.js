@@ -23,6 +23,21 @@
   gtag('config', GA_ID);
 })();
 
+// ── Microsoft Clarity ─────────────────────────────────────────────────────
+// Mapas de calor y grabaciones de sesión: dónde tocan, hasta dónde bajan y
+// dónde abandonan. GA4 dice cuántos tocan WhatsApp; Clarity muestra qué hicieron
+// antes de tocarlo (o de irse). Mientras CLARITY_ID esté vacío no carga nada.
+(function () {
+  const CLARITY_ID = ""; // ID del proyecto en clarity.microsoft.com
+  if (!CLARITY_ID) return;
+
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", CLARITY_ID);
+})();
+
 // ── Píxel de Meta ─────────────────────────────────────────────────────────
 // Mide visitas y clics a WhatsApp para las campañas de Meta Ads.
 (function () {

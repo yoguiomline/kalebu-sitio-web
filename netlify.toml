@@ -31,6 +31,16 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
+# Enlace corto para la bio de Instagram: kalebu.com.ar/ig
+# Instagram muestra la URL entera y un ?utm_ largo se lee como publicidad; el UTM
+# se agrega acá, del lado del servidor, y GA4 separa esas visitas como "instagram / bio".
+# 302 y no 301 a propósito: el 301 queda guardado en el navegador y después
+# no se puede cambiar el destino.
+[[redirects]]
+  from = "/ig"
+  to   = "/?utm_source=instagram&utm_medium=social&utm_campaign=bio"
+  status = 302
+
 # Redirect www → apex (configurar también en DNS)
 [[redirects]]
   from = "https://www.kalebu.com.ar/*"

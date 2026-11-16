@@ -28,7 +28,7 @@
 // dónde abandonan. GA4 dice cuántos tocan WhatsApp; Clarity muestra qué hicieron
 // antes de tocarlo (o de irse). Mientras CLARITY_ID esté vacío no carga nada.
 (function () {
-  const CLARITY_ID = ""; // ID del proyecto en clarity.microsoft.com
+  const CLARITY_ID = "zearpyilbp"; // Proyecto "Kalebu" en clarity.microsoft.com
   if (!CLARITY_ID) return;
 
   (function(c,l,a,r,i,t,y){
